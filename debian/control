@@ -1,15 +1,30 @@
-Source: template-repository
-Section: unknown
+Source: progress
+Section: utils
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Stephen Kitt <skitt@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               libncurses-dev,
+               pkg-config,
+Standards-Version: 4.6.2
+Homepage: https://github.com/Xfennec/progress
+Vcs-Browser: https://salsa.debian.org/debian/progress
+Vcs-Git: https://salsa.debian.org/debian/progress.git
+Rules-Requires-Root: no
 
-Package: template-repository
+Package: progress
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Coreutils Progress Viewer (formerly known as 'cv')
+ This tool can be described as a Tiny, Dirty, Linux-and-OSX-Only
+ C command that looks for coreutils basic commands (cp, mv, dd, tar,
+ gzip/gunzip, cat, etc.) currently running on your system and
+ displays the percentage of copied data. It can also show estimated
+ time and throughput, and provide a "top-like" mode (monitoring).
+ .
+ It simply scans `/proc` for interesting commands, and then looks at
+ directories `fd` and `fdinfo` to find opened files and seek positions,
+ and reports status for the largest file.
+ .
+ It's very light, and compatible with virtually any command.
+ This program was formerly known as 'cv' on github.
