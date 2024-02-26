@@ -1,5 +1,156 @@
-template-repository (1.0-1) unstable; urgency=medium
+progress (0.17-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Stephen Kitt <skitt@debian.org>  Mon, 16 Oct 2023 21:38:21 +0200
+
+progress (0.16-2) unstable; urgency=medium
+
+  * Build-depend on libncurses-dev instead of libncurses5-dev and
+    libtinfo-dev.
+  * Standards-Version 4.6.2, no change required.
+
+ -- Stephen Kitt <skitt@debian.org>  Mon, 06 Feb 2023 18:48:48 +0100
+
+progress (0.16-1) unstable; urgency=medium
+
+  * Standards-Version 4.6.0, no change required.
+  * Upload to unstable.
+
+ -- Stephen Kitt <skitt@debian.org>  Thu, 02 Sep 2021 18:22:32 +0200
+
+progress (0.16-1~exp1) experimental; urgency=medium
+
+  * New upstream release, with FreeBSD support.
+  * Update debian/watch to version 4.
+  * Standards-Version 4.5.1, no change required.
+
+ -- Stephen Kitt <skitt@debian.org>  Tue, 29 Jun 2021 21:20:10 +0200
+
+progress (0.15-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ Stephen Kitt ]
+  * New upstream release.
+  * Drop the explicit --as-needed linker flag, which is now the default.
+  * Switch to debhelper compatibility level 13.
+
+ -- Stephen Kitt <skitt@debian.org>  Fri, 12 Jun 2020 13:31:54 +0200
+
+progress (0.14-4) unstable; urgency=medium
+
+  * Revert the buildflags.mk “fix”, it broke cross-compilation.
+    Closes: #900671.
+  * Switch to debhelper compatibility level 12.
+  * Set “Rules-Requires-Root: no”.
+  * Standards-Version 4.4.0, no further change required.
+
+ -- Stephen Kitt <skitt@debian.org>  Wed, 04 Sep 2019 23:11:53 +0200
+
+progress (0.14-3) unstable; urgency=medium
+
+  * Adopt the package. Thanks Mo Zhou for your work! Closes: #919488.
+  * Standards-Version 4.3.0, no change required.
+  * Drop README.Debian which isn’t generally relevant any more.
+  * Update debian/copyright.
+  * Use buildflags.mk instead of buildtools.mk.
+
+ -- Stephen Kitt <skitt@debian.org>  Thu, 17 Jan 2019 13:53:38 +0100
+
+progress (0.14-2) unstable; urgency=medium
+
+  * Transfer packaging repo to Salsa/Debian.
+  * Bump Standards-Version to 4.2.1 (no change).
+
+ -- Mo Zhou <cdluminate@gmail.com>  Fri, 14 Sep 2018 06:31:45 +0000
+
+progress (0.14-1) unstable; urgency=medium
+
+  * New upstream version 0.14
+  * Fix FTCBFS: Also pass PKG_CONFIG for all dh_auto_*. (Closes: #900671)
+    Many thanks to Helmut Grohne <helmut@subdivi.de>
+  * Bump Standards-Version to 4.1.4 (no change).
+
+ -- Mo Zhou <cdluminate@gmail.com>  Fri, 29 Jun 2018 16:19:24 +0000
+
+progress (0.13.1+20171106-1) unstable; urgency=medium
+
+  * New upstream snapshot 0.13.1+20171106.
+  * Bump Standards-Version to 4.1.3 (no change).
+  * Bump debhelper compat level to 11.
+  * Point Vcs-* fields to Salsa.
+  * Use https URI in copyright.
+  * Simplify autopkgtest files.
+  * Refresh patch Hardening-Makefile.
+  * Update my name.
+
+ -- Mo Zhou <cdluminate@gmail.com>  Wed, 14 Feb 2018 06:02:46 +0000
+
+progress (0.13.1-1) unstable; urgency=medium
+
+  * Import upstream version 0.13.1 .
+  * Remove unnecessary hardening measures -- 'hardening=+all' is enough.
+  * Add autopkgtest support.
+
+ -- Zhou Mo <cdluminate@gmail.com>  Fri, 14 Oct 2016 05:09:20 +0000
+
+progress (0.13-3) unstable; urgency=medium
+
+  * Hardening build: Append $(CPPFLAGS) to CC argument list
+    in upstream Makefile.
+  * Update Vcs-Git to https link.
+  * Bump Standards version to 3.9.8 . (no change required)
+
+ -- Zhou Mo <cdluminate@gmail.com>  Tue, 03 May 2016 04:59:19 +0000
+
+progress (0.13-2) unstable; urgency=medium
+
+  * Bump standards from 3.9.6 to 3.9.7 (requires no change)
+  * Update Vcs-Browser to an https link.
+
+ -- Zhou Mo <cdluminate@gmail.com>  Tue, 01 Mar 2016 05:36:10 +0000
+
+progress (0.13-1) unstable; urgency=medium
+
+  * Import upstream version 0.13.
+  * Fix typo in section progress (0.12.1+git20160202-g2ec12d42-1),
+    "pkg-control" -> "pkg-config"
+
+ -- Zhou Mo <cdluminate@gmail.com>  Thu, 11 Feb 2016 03:15:11 +0000
+
+progress (0.12.1+git20160202-g2ec12d42-1) unstable; urgency=medium
+
+  * Import upstream snapshot version 0.12.1+git20160202-g2ec12d42
+  * d/control:
+    + update long description.
+    + add pkg-config to B-D.
+  * d/rules: strip unnecessary lines.
+
+ -- Zhou Mo <cdluminate@gmail.com>  Tue, 02 Feb 2016 13:56:03 +0000
+
+progress (0.9-1) unstable; urgency=medium
+
+  * Imported upstream version 0.9
+  * Removed all Debian patches, because all of them are merged by upstream.
+    - debian/patches/add-license-info.patch
+    - debian/patches/fix-makefile-ldflags.patch
+    - debian/patches/fix-manpage-has-errors.patch
+  * d/control:
+    - fixed Vcs-Git field.
+    - added Vcs-Browser field.
+
+ -- Zhou Mo <cdluminate@gmail.com>  Sun, 20 Sep 2015 09:54:22 +0000
+
+progress (0.8-1) unstable; urgency=low
+
+  * Initial release. Closes: #785425
+  * Fix manpage syntax error.
+  * Imported upstream version 0.8
+  * Fix upstream Makefile
+    + Change non-standard "LFLAGS" to "LDFLAGS"
+
+ -- Zhou Mo <cdluminate@gmail.com>  Fri, 14 Aug 2015 03:41:10 +0000
