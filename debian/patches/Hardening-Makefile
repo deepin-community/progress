@@ -1,0 +1,17 @@
+Purpose: adding $(CPPFLAGS) as argument to CC, for hardening build.
+Author: Zhou Mo
+Forward: keep it downstream -- Debian specific.
+--- a/Makefile
++++ b/Makefile
+@@ -25,9 +25,9 @@
+ ZSHDIR = $(PREFIX)/share/zsh/site-functions
+ 
+ $(OBJ) : progress.o sizes.o hlist.o
+-	$(CC) -Wall $^ -o $@ $(LDFLAGS)
++	$(CC) $(CPPFLAGS) -Wall $^ -o $@ $(LDFLAGS)
+ %.o : %.c
+-	$(CC) $(CFLAGS) -c $^
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c $^
+ clean :
+ 	rm -f *.o $(OBJ)
+ install : $(OBJ)
